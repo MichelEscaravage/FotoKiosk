@@ -1,0 +1,45 @@
+    <Page
+    x:Class="FotoKiosk.ReportsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FotoKiosk"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <StackPanel Spacing="30" Margin="25, 25, 25, 25">
+            <StackPanel Orientation="Horizontal" Spacing="20">
+            <TextBlock x:Name="tbFileStatus" FontSize="20" Text="Open een .csv met verkoopcijfers.."/>
+            <Button Click="CsvButton_Click" Content="CSV Inladen.." FontSize="20"/>
+        </StackPanel>
+
+            <StackPanel Visibility="Collapsed" Spacing="25" x:Name="ReportSp" Margin="0, 20, 0, 0">
+                <TextBlock x:Name="reportHeader" FontSize="35" FontWeight="Bold"/>
+                <StackPanel Spacing="3">
+                    <TextBlock Text="Ratio Orders / Bezoekers:" FontWeight="Bold" FontSize="15"/>
+                    <Grid>
+                        <ProgressBar Width="500" Height="40" x:Name="ratioPb" Margin="-900, 0, 0, 0"/>
+                        <TextBlock Margin="215, 0, 0, 0" x:Name="ratioText" FontSize="30" FontWeight="SemiBold" FontStyle="Italic"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="15">
+                    <TextBlock Text="Aantal Orders: " FontWeight="Bold" FontSize="20"/>
+                    <TextBlock x:Name="orderAmountTb" FontSize="20" FontStyle="Italic"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="15">
+                    <TextBlock Text="Aantal producten verkocht: " FontWeight="Bold" FontSize="20"/>
+                    <TextBlock x:Name="productsSoldTb" FontSize="20" FontStyle="Italic"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="15">
+                    <TextBlock Text="Totale omzet: " FontWeight="Bold" FontSize="20"/>
+                    <TextBlock x:Name="totalEarningsTb" FontSize="20" FontStyle="Italic"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="20">
+                    <Button x:Name="saveReportB" Content="Report Opslaan" FontSize="20" Click="saveReportB_Click"/>
+                    <TextBlock x:Name="savingStatus" FontSize="20"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+    </Page>
